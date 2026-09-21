@@ -104,10 +104,10 @@ const projects = [
 ]
 
 const principles = [
-  ['Custom Design', 'Chaque projet est pensé autour de la marque, de l’audience et des objectifs business.'],
-  ['Modern Technology', 'Des technologies propres, scalables et modernes, adaptées à chaque projet.'],
-  ['Performance First', 'Des expériences rapides, responsives et optimisées sur tous les écrans.'],
-  ['Visibility', 'Une structure pensée pour le SEO afin de rendre votre activité plus facile à découvrir.'],
+  ['Custom Design', 'Every project is shaped around your brand, audience and business goals.', 'Chaque projet est pensé autour de la marque, de l’audience et des objectifs business.'],
+  ['Modern Technology', 'Clean, scalable and modern technologies, adapted to every project.', 'Des technologies propres, scalables et modernes, adaptées à chaque projet.'],
+  ['Performance First', 'Fast, responsive experiences optimized for every screen.', 'Des expériences rapides, responsives et optimisées sur tous les écrans.'],
+  ['Visibility', 'An SEO-focused structure that makes your business easier to discover.', 'Une structure pensée pour le SEO afin de rendre votre activité plus facile à découvrir.'],
 ]
 
 const process = [
@@ -172,7 +172,7 @@ export default function Page() {
         <div className="projects-grid">{projects.map((project, i) => <article className={`project-card ${i % 3 === 0 ? 'project-wide' : ''}`} key={project.name}><div className={`project-visual ${project.tone}`}><div className="visual-grid" /><div className="visual-window"><span>{project.name}</span><div className="window-lines" /></div><span className="visual-index">0{i + 1}</span></div><div className="project-info"><div><p className="project-category">{project.category[isFr ? 1 : 0]}</p><h3>{project.name}</h3></div><ArrowUpRight size={18} /><p className="project-desc">{project.desc[isFr ? 1 : 0]}</p><p className="project-tech">{project.tech}</p></div></article>)}</div>
       </section>
 
-      <section id="about" className="editorial-section section-wrap"><div className="editorial-intro"><p className="section-kicker">{t.aboutKicker} <span>∞</span></p><h2>{t.aboutTitle.split('\n').map((line, i) => <span key={line} className={i === 1 ? 'gradient-text' : ''}>{line}<br /></span>)}</h2></div><div className="principles">{principles.map((p, i) => <div className="principle" key={p[0]}><span>0{i + 1}</span><div><h3>{isFr ? p[0] === 'Custom Design' ? 'Design sur mesure' : p[0] === 'Modern Technology' ? 'Technologie moderne' : p[0] === 'Performance First' ? 'Performance d’abord' : 'Visibilité' : p[0]}</h3><p>{p[1]}</p></div><Check size={16} /></div>)}</div></section>
+      <section id="about" className="editorial-section section-wrap"><div className="editorial-intro"><p className="section-kicker">{t.aboutKicker} <span>∞</span></p><h2>{t.aboutTitle.split('\n').map((line, i) => <span key={line} className={i === 1 ? 'gradient-text' : ''}>{line}<br /></span>)}</h2></div><div className="principles">{principles.map((p, i) => <div className="principle" key={p[0]}><span>0{i + 1}</span><div><h3>{isFr ? p[0] === 'Custom Design' ? 'Design sur mesure' : p[0] === 'Modern Technology' ? 'Technologie moderne' : p[0] === 'Performance First' ? 'Performance d’abord' : 'Visibilité' : p[0]}</h3><p>{isFr ? p[2] : p[1]}</p></div><Check size={16} /></div>)}</div></section>
 
       <section id="process" className="section-wrap process-section"><div className="section-heading split-heading"><div><p className="section-kicker">{t.processKicker} <span>6 STEPS</span></p><h2>{t.processTitle.split('\n').map((line, i) => <span key={line}>{line}<br /></span>)}</h2></div><div className="process-note"><Sparkles size={17} /><p>{isFr ? 'Une méthode claire, collaborative et pensée pour créer de l’impact.' : 'A clear, collaborative method designed to create meaningful impact.'}</p></div></div><div className="process-grid">{process.map((step, i) => <div className="process-step" key={step[0]}><div><span className="step-number">0{i + 1}</span><span className="step-line" /></div><h3>{isFr ? step[0] === 'Discovery' ? 'Découverte' : step[0] === 'Strategy' ? 'Stratégie' : step[0] === 'Design' ? 'Design' : step[0] === 'Development' ? 'Développement' : step[0] === 'Launch' ? 'Lancement' : 'Croissance' : step[0]}</h3><p>{isFr ? step[2] : step[1]}</p></div>)}</div></section>
 
